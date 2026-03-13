@@ -1,14 +1,47 @@
-# TS-academy-2-
-This project builds a machine learning model to predict California house price using Linear Regression and EDA. It covers end-to-end data analysis, from exploratory data analysis (EDA) to building and evaluating a Linear Regression model. Dataset: 20,640 districts, 10 features including ocean proximity.
+#  California House Price Prediction
+---
 
+**Project Descriptions:**
+California house price prediction using Linear Regression, Decision
+Tree, and Random Forest. Includes EDA, feature importance analysis,
+and model comparison with R² and MAE metrics.
 
+---
+
+## Overview
+An end-to-end machine learning project to predict median house prices
+across California districts. The project covers exploratory data
+analysis (EDA), data cleaning, and multiple regression models including
+Linear Regression, Decision Tree, and Random Forest.
+
+---
+
+## Dataset
+- **Source:** California Housing Dataset
+- **Rows:** 20,640 districts
+- **Features:** 9 input features + 1 target variable
+
+| Column | Description | Type |
+|---|---|---|
+| `longitude` | Geographical longitude of district | float64 |
+| `latitude` | Geographical latitude of district | float64 |
+| `housing_median_age` | Median age of houses in district | float64 |
+| `total_rooms` | Total number of rooms in district | float64 |
+| `total_bedrooms` | Total number of bedrooms (207 missing) | float64 |
+| `population` | Total population of district | float64 |
+| `households` | Total number of households | float64 |
+| `median_income` | Median income of households (in $10,000s) | float64 |
+| `ocean_proximity` | Location relative to ocean | object |
+| `median_house_value` | **Target** — Median house value in USD | float64 |
+
+---
 
 ## Objectives
-- Perform exploratory data analysis (EDA) to understand the data
-- Handle missing values in `total_bedrooms`
-- Identify key features that influence house prices
-- Build a Linear Regression model to predict median house values
-- Evaluate model performance using standard regression metrics
+- Perform EDA to understand data distributions and relationships
+- Handle missing values and encode categorical variables
+- Build and compare multiple regression models
+- Evaluate models using R² and MAE metrics
+- Identify the most important features driving house prices
 
 ---
 
@@ -16,46 +49,47 @@ This project builds a machine learning model to predict California house price u
 | Tool | Purpose |
 |---|---|
 | Python | Core programming language |
-| Pandas | Data manipulation |
+| Pandas | Data manipulation and cleaning |
 | NumPy | Numerical computing |
 | Matplotlib / Seaborn | Data visualization |
-| Scikit-learn | Machine learning (Linear Regression) |
+| Scikit-learn | Machine learning models |
 | Jupyter Notebook | Development environment |
 
 ---
 
-## Exploratory Data Analysis
-Key analyses performed:
-- Distribution of `median_house_value`
-- Missing data analysis
-- Relationship between `median_income` and house prices
-- `ocean_proximity` category analysis
+## Notebooks
+
+### 1. housing_eda.ipynb — EDA & Linear Regression
+- Data exploration and visualisation
+- Missing value handling
+- Correlation analysis
+- Linear Regression model
+- Model evaluation (R², MAE)
+
+### 2. 🤖 housing_models.ipynb — Decision Tree & Random Forest
+- Decision Tree Regression
+  - Model training and evaluation
+  - R² and MAE scores
+  - Feature importance
+- Random Forest Regression
+  - Model training and evaluation
+  - R² and MAE scores
+  - Feature importance
+---
+
+## Model Comparison
+| Model | R² Score | MAE |
+|---|---|---|
+| Linear Regression | 0.64 | 51372.67 |
+| Decision Tree | 0.7312 | 40685.62 |
+| Random Forest | 0.7791 | 36640.07 |
 
 ---
 
-## Modelling
-- **Algorithm:** Linear Regression
-- **Train/Test Split:** 80% train / 20% test
-- **Preprocessing:**
-  - Missing value imputation (`total_bedrooms`)
-  - Encoding of `ocean_proximity` (categorical)
-- **Evaluation Metrics:**
-  - MAE (Mean Absolute Error)
-  - R² Score
+##  Feature Importance
+Top features identified by Random Forest:
+1. Median income
+2. Longitude
+3. Latitude
 
 ---
-
-
-## Results
-| Metric | Score |
-|---|---|
-| MAE | *(24.83)* |
-| R² Score | *(0.64)* |
-
----
-
-# Future Work
-- Try advanced models (Random Forest, XGBoost, Ridge/Lasso Regression)
-- Engineer new features (rooms per household, bedrooms per room)
-- Explore geographical clustering
-- Hyperparameter tuning
