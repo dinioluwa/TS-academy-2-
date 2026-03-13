@@ -59,14 +59,14 @@ Linear Regression, Decision Tree, and Random Forest.
 
 ## Notebooks
 
-### 1. housing_eda.ipynb — EDA & Linear Regression
+### 1. housing.ipynb — EDA & Linear Regression
 - Data exploration and visualisation
 - Missing value handling
 - Correlation analysis
 - Linear Regression model
 - Model evaluation (R², MAE)
 
-### 2. 🤖 housing_models.ipynb — Decision Tree & Random Forest
+### 2. housing_models.ipynb — Decision Tree & Random Forest
 - Decision Tree Regression
   - Model training and evaluation
   - R² and MAE scores
